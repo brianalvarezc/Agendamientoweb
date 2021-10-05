@@ -1,0 +1,3 @@
+- Crear la base de datos para saber con qué trabajar
+- Crear el proyecto y subirlo a GitHub. En caso de no funcionar correctamente el GitHub Desktop, si sale en pantalla negra se puede modificar en su acceso directo agregándole al final la instrucción --disable-gpu
+- Descargar el conector de MySQL desde mvnrepo
