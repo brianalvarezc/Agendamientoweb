@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>CapitainCrunch</groupId>
-    <artifactId>Agendamiento</artifactId>
+    <artifactId>AgendamientoWeb</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>Agendamiento</name>
+    <name>AgendamientoWeb</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>

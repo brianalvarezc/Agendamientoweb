@@ -1,3 +1,7 @@
 - Crear la base de datos para saber con qué trabajar
 - Crear el proyecto y subirlo a GitHub. En caso de no funcionar correctamente el GitHub Desktop, si sale en pantalla negra se puede modificar en su acceso directo agregándole al final la instrucción --disable-gpu
-- Descargar el conector de MySQL desde mvnrepo
+- Descargar el conector de MySQL desde https://mvnrepository.com/ buscando "MySQL connector" y escogen el de la versión de MySQL que están usando.
+- Descargar también la dependencia TestNG para las pruebas unitarias y progresivas. Se escoge el que más hayan descargado o el último.
+
+- Creación de la pantalla de login, solo lo visual.
+- Crear la conexión del proyecto con la base de datos MySQL.
