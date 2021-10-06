@@ -18,11 +18,11 @@ import java.sql.Statement;
 public class ConexionBD {
     
     // Atributos
-    private String conectorInstalado = "jdvc:mysql:";
+    private String conectorInstalado = "jdbc:mariadb:";
     private String host = "localhost:3306";
-    private String baseDatos = "Agendamiento";
+    private String baseDatos = "agendamiento";
     private String username = "root";
-    private String password = "root";
+    private String password = "";
     private Connection conexion; 
     private Statement ejecutar;
     
@@ -42,7 +42,7 @@ public class ConexionBD {
     private void conectar() {
         try{
             String cadenaConexion = conectorInstalado + "//" + host + "/" + baseDatos;
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("org.mariadb.jdbc.Driver");
             conexion = DriverManager.getConnection(cadenaConexion, username, password);
             ejecutar = conexion.createStatement();
             ejecutar.setQueryTimeout(30);
