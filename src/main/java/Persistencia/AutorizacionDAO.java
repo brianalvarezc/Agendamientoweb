@@ -17,7 +17,9 @@ import java.util.ArrayList;
 public class AutorizacionDAO {
     
     // Instrucciones SQL
-    private String query_autorizacion = "SELECT autorizacion_Id, autorizacion_Id_Entidad, autorizacion_Id_Paciente, autorizacion_fecha, autorizacion_Estado_Id FROM autorizacion;";
+    private String query_autorizacion = "SELECT au.autorizacion_Id, e.entidad_Nombre, au.autorizacion_Id_Paciente, au.autorizacion_fecha, au.autorizacion_Estado_Id "
+                                        + "FROM autorizacion au "
+                                        + "JOIN entidad e ON (au.autorizacion_Id_Entidad = e.entidad_Id) ";
     
     public ArrayList<Autorizacion> consultarAutorizacion(){
         ArrayList<Autorizacion> lista_autorizacion = new ArrayList<>();
@@ -26,12 +28,12 @@ public class AutorizacionDAO {
         try{
             while(rs.next()){
                 int autorizacion_Id = rs.getInt("autorizacion_Id");
-                int autorizacion_Id_Entidad = rs.getInt("autorizacion_Id_Entidad");
+                String autorizacion_Nombre_Entidad = rs.getString("entidad_Nombre");
                 int autorizacion_Id_Paciente = rs.getInt("autorizacion_Id_Paciente");
                 String autorizacion_fecha = rs.getString("autorizacion_fecha");
                 int autorizacion_Estado_Id = rs.getInt("autorizacion_Estado_Id");
                 // Crear el objeto con los datos extraidos de la BD
-                Autorizacion autorizacion = new Autorizacion(autorizacion_Id, autorizacion_Id_Entidad, autorizacion_Id_Paciente, autorizacion_fecha, autorizacion_Estado_Id);
+                Autorizacion autorizacion = new Autorizacion(autorizacion_Id, autorizacion_Nombre_Entidad, autorizacion_Id_Paciente, autorizacion_fecha, autorizacion_Estado_Id);
                 lista_autorizacion.add(autorizacion);                
             }
         }

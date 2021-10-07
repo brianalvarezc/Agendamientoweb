@@ -13,7 +13,8 @@ public class Autorizacion {
         
     // Atributos ////////////////////////////////////////
     private int autorizacion_Id;
-    private int autorizacion_Id_Entidad;
+    //private int autorizacion_Id_Entidad;
+    private String autorizacion_Nombre_Entidad;
     private int autorizacion_Id_Paciente;
     private String autorizacion_fecha;
     private int autorizacion_Estado_Id;
@@ -23,16 +24,16 @@ public class Autorizacion {
     public Autorizacion() {
     }
 
-    public Autorizacion(int autorizacion_Id_Entidad, int autorizacion_Id_Paciente, String autorizacion_fecha, int autorizacion_Estado_Id) {
-        this.autorizacion_Id_Entidad = autorizacion_Id_Entidad;
+    public Autorizacion(String autorizacion_Nombre_Entidad, int autorizacion_Id_Paciente, String autorizacion_fecha, int autorizacion_Estado_Id) {
+        this.autorizacion_Nombre_Entidad = autorizacion_Nombre_Entidad;
         this.autorizacion_Id_Paciente = autorizacion_Id_Paciente;
         this.autorizacion_fecha = autorizacion_fecha;
         this.autorizacion_Estado_Id = autorizacion_Estado_Id;
     }
 
-    public Autorizacion(int autorizacion_Id, int autorizacion_Id_Entidad, int autorizacion_Id_Paciente, String autorizacion_fecha, int autorizacion_Estado_Id) {
+    public Autorizacion(int autorizacion_Id, String autorizacion_Nombre_Entidad, int autorizacion_Id_Paciente, String autorizacion_fecha, int autorizacion_Estado_Id) {
         this.autorizacion_Id = autorizacion_Id;
-        this.autorizacion_Id_Entidad = autorizacion_Id_Entidad;
+        this.autorizacion_Nombre_Entidad = autorizacion_Nombre_Entidad;
         this.autorizacion_Id_Paciente = autorizacion_Id_Paciente;
         this.autorizacion_fecha = autorizacion_fecha;
         this.autorizacion_Estado_Id = autorizacion_Estado_Id;
@@ -47,13 +48,13 @@ public class Autorizacion {
     public void setAutorizacion_Id(int autorizacion_Id) {
         this.autorizacion_Id = autorizacion_Id;
     }
-
-    public int getAutorizacion_Id_Entidad() {
-        return autorizacion_Id_Entidad;
+    // Cambie _Id_Entidad por _Nombre_Entidad y el tipo de dato
+    public String getAutorizacion_Nombre_Entidad() {
+        return autorizacion_Nombre_Entidad;
     }
 
-    public void setAutorizacion_Id_Entidad(int autorizacion_Id_Entidad) {
-        this.autorizacion_Id_Entidad = autorizacion_Id_Entidad;
+    public void setAutorizacion_Id_Entidad(String autorizacion_Nombre_Entidad) {
+        this.autorizacion_Nombre_Entidad = autorizacion_Nombre_Entidad;
     }
 
     public int getAutorizacion_Id_Paciente() {
