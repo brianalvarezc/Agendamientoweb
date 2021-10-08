@@ -49,9 +49,9 @@
                     <tr>
                       <td><%= a.getAutorizacion_Id() %></td>
                       <td><%= a.getAutorizacion_Nombre_Entidad()%></td>
-                      <td><%= a.getAutorizacion_Id_Paciente()%></td>
+                      <td><%= a.getAutorizacion_paciente_Nombre()%></td>
                       <td><%= a.getAutorizacion_fecha()%></td>
-                      <td><%= a.getAutorizacion_Estado_Id() %></td>
+                      <td><%= a.getAutorizacion_estado_Nombre() %></td>
                     </tr>
                     
                 <% }}else{ %>

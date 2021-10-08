@@ -17,9 +17,11 @@ import java.util.ArrayList;
 public class AutorizacionDAO {
     
     // Instrucciones SQL
-    private String query_autorizacion = "SELECT au.autorizacion_Id, e.entidad_Nombre, au.autorizacion_Id_Paciente, au.autorizacion_fecha, au.autorizacion_Estado_Id "
+    private String query_autorizacion = "SELECT au.autorizacion_Id, e.entidad_Nombre, p.paciente_Nombre, au.autorizacion_fecha, es.estado_Nombre "
                                         + "FROM autorizacion au "
-                                        + "JOIN entidad e ON (au.autorizacion_Id_Entidad = e.entidad_Id) ";
+                                        + "JOIN entidad e ON (au.autorizacion_Id_Entidad = e.entidad_Id) "
+                                        + "JOIN paciente p ON (au.autorizacion_Id_Paciente = p.paciente_Id) "
+                                        + "JOIN estados es ON (au.autorizacion_Estado_Id = es.estado_Id) ;";
     
     public ArrayList<Autorizacion> consultarAutorizacion(){
         ArrayList<Autorizacion> lista_autorizacion = new ArrayList<>();
@@ -29,11 +31,11 @@ public class AutorizacionDAO {
             while(rs.next()){
                 int autorizacion_Id = rs.getInt("autorizacion_Id");
                 String autorizacion_Nombre_Entidad = rs.getString("entidad_Nombre");
-                int autorizacion_Id_Paciente = rs.getInt("autorizacion_Id_Paciente");
+                String paciente_Nombre = rs.getString("paciente_Nombre");
                 String autorizacion_fecha = rs.getString("autorizacion_fecha");
-                int autorizacion_Estado_Id = rs.getInt("autorizacion_Estado_Id");
+                String estado_Nombre = rs.getString("estado_Nombre");
                 // Crear el objeto con los datos extraidos de la BD
-                Autorizacion autorizacion = new Autorizacion(autorizacion_Id, autorizacion_Nombre_Entidad, autorizacion_Id_Paciente, autorizacion_fecha, autorizacion_Estado_Id);
+                Autorizacion autorizacion = new Autorizacion(autorizacion_Id, autorizacion_Nombre_Entidad, paciente_Nombre, autorizacion_fecha, estado_Nombre);
                 lista_autorizacion.add(autorizacion);                
             }
         }
